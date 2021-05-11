@@ -33,7 +33,6 @@ var app = new Vue({
 * Variables in `data` can be directly accessed in DOM. They can also be accessed within the vue instance using the keywork `this`, e.g. `this.productName`.
 
 ## Emits
-
 ```javascript
 this.$emit('event-name', parameter1, parameter2, ...)
 ```

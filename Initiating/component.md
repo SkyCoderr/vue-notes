@@ -36,3 +36,7 @@ Vue.component('componentName', {
 ### props
 * The `props` option is an array of attributes that the component expects to receive from the parent.
 * It is recommended to use a props object instead of a props array. So that we can specify the data type of each prop, and whether it is required, even its default.
+
+### mounted
+* `mounted` is a lifecycle hook.
+* A place to put the code as soon as the component is mounted to the DOM

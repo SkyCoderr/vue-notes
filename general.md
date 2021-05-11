@@ -60,5 +60,25 @@ variants: [
 * Whenever its dependency changes, computed properties run again and update themselves.
 * The results of computed properties are cached until their dependencies change.
 * It's more efficient to use a computed property rather than a method for an expensive operation that you don't want to re-run every time you access it.
-* 
+
+## Event Bus
+* An event bus is essentially a Vue instance that acts as a global channel for all components across the globe to communicate through.
+```javascript
+var eventBus = new Vue();
+```
+* For example, for a grandchild component to communicate with a grandparent:
+```javascript
+// instead of using:
+this.$emit('event-name', payload);
+// we use:
+eventBus.$emit('event-name', payload);
+```
+* For the grandparent to listen to this event through this event bus, the grandparent would need to have a mounted property that listens to this event through this event bus.
+```javascript
+mounted () {
+    eventBus.$on('event-name', payload => {
+        // callback function code
+    })
+;}
+```
 
